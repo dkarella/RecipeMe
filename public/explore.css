@@ -1,0 +1,112 @@
+body {
+    font-family: "Roboto", "Arial", sans-serif;
+    margin-top: 140px;
+    color: #2c2c2c;
+}
+
+#logo {
+    width: 100px;
+    margin-right: 40px;
+}
+
+.navbar .glyphicon {
+    font-size: 2.3em; 
+    text-align: center;
+}
+
+.navbar {
+    padding: 10px 30px;
+}
+
+.navbar a {
+    color: #505050;
+    padding-right: 60px;
+}
+
+.navbar a:hover {
+    color: #969696;
+    text-decoration: none;
+}
+
+.navbar h4 {
+    font-weight: 300;
+    margin-bottom: 0px;
+}
+
+.navbar li {
+    margin-right: 30px;
+}
+
+.userpic {
+    width: 70px;
+    margin-top: 13px;
+    margin-right: 20px;
+}
+
+#greeting {
+    float: right;
+    margin-top: 37px;
+    font-weight: 300;
+    font-size: 1.2em;
+}
+
+#greeting a {
+    color: #2c2c2c;
+    text-decoration: underline;
+}
+
+#greeting a:hover {
+    color: #ff7600;
+}
+
+.dropdown li {
+    padding: 5px 0;
+}
+
+.more {
+    margin-bottom: 20px;
+}
+
+.recipes {
+    border: 1px solid #d3d3d3;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.recipes img {
+    width:100%;
+    height: 250px;
+}
+
+.recipes h2 {
+    font-weight: 300;
+    margin: 13px 0 10px 0;
+}
+
+.recipes a {
+    color: #2c2c2c;
+}
+
+.recipes a:hover {
+    text-decoration: none;
+    color: #ff7600;
+}
+
+.recipes h5 {
+    float: left;
+    padding-right: 10px;
+    margin: 0px 0;
+    font-weight: 400;
+}
+
+/*
+End of index.html css
+*/
+
+.pageheader {
+    font-weight: 300;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 45px;
+}
+
