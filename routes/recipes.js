@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-router.use('/recipes', require('./recipes'));
+router.get('/', function(req, res){
+    res.json({'TODO': 'Get recipes'});
+});
 
 module.exports = router;
