@@ -11,9 +11,10 @@ app.config(function($routeProvider){
 
         // route for the explore page
         .when('/explore', {
-            templateUrl : 'modules/explore/explore.html'
+            templateUrl : 'modules/explore/explore.html', 
+            controller: 'exploreController'
         })
-        .when('/recipe', {
+        .when('/recipe/:name', {
             templateUrl : 'modules/recipe/recipe.html'
         })
         .otherwise({
