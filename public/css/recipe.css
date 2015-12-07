@@ -1,15 +1,95 @@
+body {
+    background-color: #313131;
+    margin-top: 112px;
+}
+
+.pagecontainer {
+    background-color: white;
+    padding-top: 30px;
+}
+
+/*Recipe header*/
+
 .recipepic img {
     width: 100%;
 }
 
 .recipename {
     font-weight: 300;
+    margin-bottom: 20px;
 }
 
-.recipepage li {
+.recipeheader li {
     display: inline;
+    font-size: 1.3em;
     font-weight: 300;
     text-decoration: none;
     list-style: none;
     padding-right: 20px;
+}
+
+.recipeheader p {
+    font-size: 1.3em;
+    font-weight: 300;
+}
+
+/*Add to cookbook or groceries buttons bar*/
+
+.recipeadd {
+    margin-top: 25px;
+}
+
+.recipeadd h3 {
+    font-weight: 300;
+    margin: 18px;
+}
+
+.addbutton {
+    float: left;
+    background-color: #c8f089;
+    display: block;
+    text-align: center;
+    border: 1px solid #8b8b8b;
+}
+
+.addbutton a {
+    color: #2c2c2c;
+}
+
+.addbutton a:hover {
+    text-decoration: none;
+}
+
+.addbutton:hover {
+    background-color: #d0f7a9;
+}
+
+#addcookbook {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#addgroceries {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/*Instructions*/
+
+.instructions li {
+    list-style: none;
+    font-size: 1.3em;
+    font-weight: 300;
+}
+
+.instructions ul {
+    padding-left: 0;
+}
+
+.ingredients li {
+    line-height: 1.8em;
+}
+
+.steps li {
+    line-height: 2.3em;
 }
