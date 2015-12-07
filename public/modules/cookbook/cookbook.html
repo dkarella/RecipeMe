@@ -26,6 +26,19 @@
 
 <div class="row">
     <div class="container">
+        <div ng-repeat="recipe in recipes" class="col-md-4 recipes">
+            <a href="#/recipe/{{recipe.name}}">
+                <img src="{{recipe.picture}}">
+                <h2>{{recipe.name}}</h2>
+            </a>
+            <p>{{recipe.description}}</p>
+            <h5>Serving size: {{recipe.servingSize}}</h5>
+            <h5>Difficulty: {{recipe.difficulty}}</h5>
+            <h5 ng-if="recipe.hours && recipe.minutes">Time: {{recipe.hours}} hour {{recipe.minutes}} min</h5>
+            <h5 ng-if="recipe.hours">Time: {{recipe.hours}} hour</h5>
+            <h5 ng-if="recipe.minutes">Time: {{recipe.minutes}} min</h5>
+        </div>
+        <!--
         <div class="col-md-4 recipes">
             <a href="#">
                 <img src="assets/recipe6.jpg" alt="Spinach Artichoke Dip">
@@ -76,5 +89,6 @@
             <h5>Difficulty: Easy</h5>
             <h5>Time: 15 min</h5>
         </div>
+        -->
     </div><!--/.container-->
 </div><!--/.row-->

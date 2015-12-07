@@ -2,7 +2,6 @@ angular.module('app').controller('exploreController', ['$scope', '$http', '$loca
     $http.get('/api/recipes/').then(
             function(recipes){
                 $scope.recipes = recipes.data;
-                console.log(recipes);
             },
             function(){
                 $location.url('/');

@@ -6,7 +6,8 @@ app.config(function($routeProvider){
     $routeProvider
         // route for the cookbook
         .when('/', {
-            templateUrl : 'modules/cookbook/cookbook.html'
+            templateUrl : 'modules/cookbook/cookbook.html',
+            controller: 'cookbookController'
         })
 
         // route for the explore page
