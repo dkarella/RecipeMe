@@ -13,6 +13,9 @@ app.config(function($routeProvider){
         .when('/explore', {
             templateUrl : 'modules/explore/explore.html'
         })
+        .when('/recipe', {
+            templateUrl : 'modules/recipe/recipe.html'
+        })
         .otherwise({
             redirect: '/'
         });
