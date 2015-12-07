@@ -13,6 +13,8 @@ var RecipeSchema = new Schema({
     hours: Number,
     minutes: Number,
     saved: Boolean,
+    private: Boolean,
+    cookbook: String,
     ingredients: [{
         name: String,
         unit: String,
