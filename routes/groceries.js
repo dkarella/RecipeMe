@@ -18,7 +18,7 @@ router.get('/', function(req, res){
                 recipeIds.push(docs.recipes[i].recipe);
             }
             console.log(recipeIds);
-            Recipes.find({_id:{$in:[recipeIds]}}, function(err, docs){
+            Recipes.find({_id:{$in:recipeIds}}, function(err, docs){
                 if(err){
                     console.log(err);
                     res.sendStatus(400);
