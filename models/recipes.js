@@ -12,9 +12,11 @@ var RecipeSchema = new Schema({
     difficulty: String,
     hours: Number,
     minutes: Number,
+    saved: Boolean,
     ingredients: [{
         name: String,
         unit: String,
+        prep: String,
         quantity: Number
     }],
     steps: [{
@@ -22,11 +24,6 @@ var RecipeSchema = new Schema({
         text: String
     }]
 });
-
-// Add any extra functions
-RecipeSchema.methods.insert = function(doc){
-
-};
 
 var RecipeModel = mongoose.model('Recipe', RecipeSchema);
 module.exports = RecipeModel;
