@@ -14,7 +14,7 @@ body {
     width: 100%;
 }
 
-.recipename {
+.recipetitle {
     font-weight: 300;
     margin-bottom: 20px;
 }
@@ -91,5 +91,5 @@ body {
 }
 
 .steps li {
-    line-height: 2.3em;
+    line-height: 2em;
 }

@@ -10,6 +10,7 @@ body {
     padding-top: 30px;
 }
 
+/*Navbar*/
 #logo {
     width: 100px;
     margin-right: 40px;
@@ -65,6 +66,7 @@ body {
     color: #ff7600;
 }
 
+/*Dropdown*/
 .dropdown li {
     padding: 5px 0;
 }
@@ -73,6 +75,7 @@ body {
     margin-bottom: 20px;
 }
 
+/*Recipes*/
 .recipes {
     border: 1px solid #d3d3d3;
     padding: 15px;
@@ -105,5 +108,8 @@ body {
     font-weight: 400;
 }
 
-    
+/*Modal*/
+.modalbox {
+    padding: 20px 30px;
+}
 
