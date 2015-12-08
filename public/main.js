@@ -23,7 +23,8 @@ app.config(function($routeProvider){
             controller: 'groceryController'
         })
         .when('/forms', {
-            templateUrl: 'modules/forms/forms.html'
+            templateUrl: 'modules/forms/forms.html',
+            controller: 'formsController'
         })
         .otherwise({
             redirect: '/'
