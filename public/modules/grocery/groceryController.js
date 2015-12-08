@@ -7,6 +7,7 @@ angular.module('app').controller('groceryController', ['$scope', '$http', '$loca
                         $scope.ingredients.push(recipes.data[i].ingredients[j]);
                     }
                 }
+                console.log($scope.ingredients[0]);
             },
             function(){
                 $location.url('/');

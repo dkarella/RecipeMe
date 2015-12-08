@@ -1,0 +1,15 @@
+
+<div class="container pagecontainer">
+    <div class="row">
+        <div class="container">
+            <h1 class="pageheader">Grocery list</h1>
+            <ul ng-repeat="ingredient in ingredients">
+                <li>
+                    {{ingredient.quantity}}
+                    {{ingredient.unit}}
+                    {{ingredient.name}}
+                </li>
+            </ul>
+        </div><!--/.container-->
+    </div><!--/.row-->
+</div>

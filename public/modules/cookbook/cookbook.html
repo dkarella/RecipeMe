@@ -58,15 +58,40 @@
     </div><!--/.modal-dialog modal-lg-->
 </div><!--/.modal fade-->
 
-<form method="post">
-<div id="itemRows">
+<div class="container">
+    <div class="row">
+        <div class="control-group" id="fields">
+            <label class="control-label" for="field1">Ingredients</label>
+            <div class="controls">
+                <form role="form" class="form-inline" autocomplete="off">
+                    <div class="entry input-group">
+                        <div class="form-group">
+                            <input class="form-control" name="fields[]" type="text" placeholder="Ingredient" />
+                            <input class="form-control" name="fields[]" type="number" placeholder="Quantity" />
+                            <input class="form-control" name="fields[]" type="text" placeholder="Units of quantity" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-success btn-add" type="button">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-Item quantity: <input type="text" name="add_qty" size="4" /> Item name: <input type="text" name="add_name" /> <input onclick="addRow(this.form);" type="button" value="Add row" />
+    <!--<div class="form-group">-->
+        <!--<input type="email" class="form-control" id="inputEmail" placeholder="Email">-->
+        <!--<label class="inputtime" for="inputhour">hour(s)</label>-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+        <!--<input type="password" class="form-control" id="inputPassword" placeholder="Password">-->
+        <!--<label class="inputtime" for="inputmin">minutes</label>-->
+    <!--</div>-->
 
-</div>
-</form>
 
-<div class="row">
+    <div class="row">
     <div class="container">
         <div ng-repeat="recipe in recipes" class="col-md-4 recipes">
             <a href="#/recipe/{{recipe.name}}">

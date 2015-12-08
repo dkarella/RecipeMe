@@ -18,7 +18,7 @@ app.config(function($routeProvider){
         .when('/recipe/:name', {
             templateUrl : 'modules/recipe/recipe.html'
         })
-        .when('/grocery', {
+        .when('/groceries', {
             templateUrl: 'modules/grocery/grocery.html',
             controller: 'groceryController'
         })
