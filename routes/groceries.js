@@ -13,21 +13,24 @@ router.get('/', function(req, res){
         }
         else{
             // extract the ids of the recipes
-            var recipeIds = [];
-            for(var i = 0; i < docs.recipes.length; i++){
-                recipeIds.push(docs.recipes[i].recipe);
+            if (docs){
+                var recipeIds = [];
+                for(var i = 0; i < docs.recipes.length; i++){
+                    recipeIds.push(docs.recipes[i].recipe);
+                }
+                console.log(recipeIds);
+                Recipes.find({_id:{$in:recipeIds}}, function(err, docs){
+                    if(err){
+                        console.log(err);
+                        res.sendStatus(400);
+                    }
+                    else{
+                        console.log(docs);
+                        res.json(docs);
+                    }
+                });
             }
-            console.log(recipeIds);
-            Recipes.find({_id:{$in:recipeIds}}, function(err, docs){
-                if(err){
-                    console.log(err);
-                    res.sendStatus(400);
-                }
-                else{
-                    console.log(docs);
-                    res.json(docs);
-                }
-            });
+            res.sendStatus(200);
         }
     });
 });

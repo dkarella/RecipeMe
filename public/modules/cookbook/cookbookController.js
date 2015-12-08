@@ -15,23 +15,6 @@ angular.module('app').controller('cookbookController', ['$scope', '$http', '$loc
                 $scope.message = "GET failed!";
             }
         );
-    //$scope.addIngredient = function(){
-    //    $('#ingredientRows .last input[type="button"]').attr('ng-click', 'removeIngredient(this)');
-    //    var $el1 = $('#ingredientRows .last input[type="button"]').val('-');
-    //    $('#ingredientRows .last').removeClass('last');
-    //    $scope.item++;
-    //    var $el2  = $('#ingredientRows').append('<div class="row last" id="ingredientRow{{item}}"> Ingredient quantity: <input type="text" size="4" ng-model="ingredientQty"/> \
-    //        Ingredient name: <input type="text" ng-model="ingredientName"/> \
-    //        <input ng-click="addIngredient()" type="button" value="+" /> </div>');
-    //
-    //    $compile($el1)($scope);
-    //    $compile($el2)($scope);
-    //};
-    //
-    //$scope.removeIngredient = function(ingredient){
-    //    console.log($(ingredient));
-    //    $(ingredient).parent().remove();
-    //}
 }]);
 
 var rowNum = 0;
