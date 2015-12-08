@@ -75,5 +75,43 @@
     <div ng-view>
         <!-- content goes here -->
     </div>
+
+    <!-- Button to trigger modal -->
+
+    <!-- First Modal -->
+    <div id="firstModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Modal header</h3>
+        </div>
+        <div class="modal-body">
+            <p>One fine body…</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close This Modal</button>
+            <button id="next" class="btn">Next Modal</button>
+        </div>
+    </div>
+
+    <!-- Second Modal -->
+    <div id="secondModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Modal header</h3>
+        </div>
+        <div class="modal-body">
+            <p>One fine body…</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
+
+    <script>
+        $("#next").click(function(){
+            $('#firstModal').modal('hide');
+            $('#secondModal').modal('show');
+        });
+    </script>
 </body>
 </html>
