@@ -96,6 +96,9 @@ body {
 
 /*Modal*/
 
+#createrecipe {
+}
+
 .modalbox {
     padding: 15px 50px;
     height: 500px;
@@ -131,6 +134,7 @@ input[type="radio"] {
 #labelhour {
     margin-right: 8px;
 }
+
 
 
 
