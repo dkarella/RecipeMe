@@ -102,16 +102,12 @@ body {
 .modalbox {
     padding: 15px 50px;
     height: 500px;
+    position: relative;
 }
 
 .modalbox h3 {
     padding-top: 15px;
     padding-bottom: 10px;
-}
-
-#rightnext {
-    overflow: auto;
-    margin-bottom: 20px;
 }
 
 label {
@@ -139,7 +135,20 @@ input[type="radio"] {
     margin-bottom: 50px;
 }
 
+/*Next and back buttons*/
 
+#backto1, #backto2, #backto3, #backto4, #nextto2, #nextto3, #nextto4, #nextto5 {
+    position: absolute;
+    top: 430px;
+}
+
+#backto1, #backto2, #backto3, #backto4 {
+    left: 50px;
+}
+
+#nextto2, #nextto3, #nextto4, #nextto5 {
+    right: 50px;
+}
 
 
 

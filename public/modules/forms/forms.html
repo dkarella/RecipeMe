@@ -1,8 +1,8 @@
 <!--Modal-->
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#firstModal" id="createrecipe">Create new recipe</button>
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal3" id="createrecipe">Create new recipe</button>
 
 
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="firstModal" aria-hidden="true">
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal3" aria-hidden="true"><!--modal3-->
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form class="form-inline">
@@ -75,21 +75,42 @@
                         </div><!--.col-md-2-->
                     </div><!--/.row-->
                     <div class="clearfix"></div>
-                    <button type="submit" class="btn btn-default button-previous pull-left" id="back">Back</button>
-                    <button type="submit" class="btn btn-default button-next pull-right" id="next">Next</button>
+                    <button type="submit" class="btn btn-default button-previous pull-left" id="backto2">Back</button>
+                    <button type="submit" class="btn btn-default button-next pull-right" id="nextto4">Next</button>
                 </form>
             </div><!--/.modalbox-->
         </div><!--/.modal-content-->
     </div><!--/.modal-dialog modal-lg-->
 </div><!--/.modal fade-->
 
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="secondModal" aria-hidden="true">
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal4" aria-hidden="true"><!--modal4-->
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form class="form-inline">
                 <div class="modalbox">
-                    <h3>it works</h3>
-                    <label>Serving size:</label><!--Serving size radio buttons-->
+                    <form>
+                        <div class="form-group">
+                            <h3>Add a picture (optional)</h3>
+                            <label for="exampleInputFile">Add a photo</label>
+                            <input type="file" id="inputpicture">
+                        </div>
+                    </form>
+                    <div class="clearfix"></div>
+                    <button type="submit" class="btn btn-default button-previous pull-left" id="backto3">Back</button>
+                    <button type="submit" class="btn btn-default button-next pull-right" id="nextto5">Next</button>
+                </form>
+            </div><!--/.modalbox-->
+        </div><!--/.modal-content-->
+    </div><!--/.modal-dialog modal-lg-->
+</div><!--/.modal fade-->
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal5" aria-hidden="true"><!--modal5-->
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form class="form-inline">
+                <div class="modalbox">
+                    <h3>Almost done</h3>
+                    <label>Cookbook</label><!--Serving size radio buttons-->
                     <label class="chooseservingsize">
                     <input type="radio" name="ServingRadioOptions" id="servingradio1" value="option1"> 1
                     </label>
@@ -156,8 +177,8 @@
                         </div><!--.col-md-2-->
                     </div><!--/.row-->
                     <div class="clearfix"></div>
-                    <button type="submit" class="btn btn-default button-previous pull-left" id="back2">Back</button>
-                    <button type="submit" class="btn btn-default button-next pull-right" id="next2">Next</button>
+                    <button type="submit" class="btn btn-default button-previous pull-left" id="backto4">Back</button>
+                    <button type="submit" class="btn btn-default button-next pull-right" id="finish">Finish</button>
                 </form>
             </div><!--/.modalbox-->
         </div><!--/.modal-content-->
@@ -181,16 +202,7 @@
 </form>
 -->
 
-<!-- Add a picture
-<form>
-    <div class="form-group">
-        <h3>Add a picture (optional)</h3>
-        <label for="exampleInputFile">Add a photo</label>
-        <input type="file" id="inputpicture">
-    </div>
-</form>
- -->
-  
+
 
 
 
