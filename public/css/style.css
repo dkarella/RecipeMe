@@ -113,3 +113,10 @@ body {
     padding: 20px 30px;
 }
 
+* {
+  .border-radius(0) !important;
+}
+
+#field {
+    margin-bottom:20px;
+}
