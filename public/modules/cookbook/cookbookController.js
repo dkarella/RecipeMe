@@ -34,40 +34,21 @@ angular.module('app').controller('cookbookController', ['$scope', '$http', '$loc
     //}
 }]);
 
-//var rowNum = 0;
-//function addRow(frm) {
-//    rowNum++;
-//    var row = '<p id="rowNum'+rowNum+'">Item quantity: <input type="text" name="qty[]" size="4" value="'+frm.add_qty.value+'"> Item name: <input type="text" name="name[]" value="'+frm.add_name.value+'"> <input type="button" value="Remove" onclick="rowRow('+rowNum+');"></p>';
-//    jQuery('#itemRows').append(row);
-//    frm.add_qty.value = '';
-//    frm.add_name.value = '';
-//}
-//
-//function removeRow(rnum) {
-//    jQuery('#rowNum'+rnum).remove();
-//}
+var rowNum = 0;
+function addRow(frm) {
+    rowNum ++;
+    var row = '<p id="rowNum'+rowNum+'">' +
+        'Ingredient quantity: <input type="text" name="qty[]" size="4" value="'+frm.add_qty.value+'"> ' +
+        'Ingredient units: <input type="text" name="add_units" size="4" />' +
+        'Ingredient name: <input type="text" name="name[]" value="'+frm.add_name.value+'"> ' +
+        '<input class="btn btn-danger" type="button" value="Remove" onclick="removeRow('+rowNum+');"></p>';
 
-$(function()
-{
-    $(document).on('click', '.btn-add', function(e)
-    {
-        e.preventDefault();
+    jQuery('#itemRows').append(row);
+    frm.add_qty.value = '';
+    frm.add_name.value = '';
+}
 
-        var controlForm = $('.controls form:first'),
-            currentEntry = $(this).parents('.entry:first'),
-            newEntry = $(currentEntry.clone()).appendTo(controlForm);
-
-        newEntry.find('input').val('');
-        controlForm.find('.entry:not(:last) .btn-add')
-            .removeClass('btn-add').addClass('btn-remove')
-            .removeClass('btn-success').addClass('btn-danger')
-            .html('<span class="glyphicon glyphicon-minus"></span>');
-    }).on('click', '.btn-remove', function(e)
-    {
-        $(this).parents('.entry:first').remove();
-
-        e.preventDefault();
-        return false;
-    });
-});
+function removeRow(rnum) {
+    jQuery('#rowNum'+rnum).remove();
+}
 

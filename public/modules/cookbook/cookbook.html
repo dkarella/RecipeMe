@@ -59,30 +59,16 @@
 </div><!--/.modal fade-->
 
 <div class="container">
-    <div class="row">
-        <div class="control-group" id="fields">
-            <label class="control-label" for="field1">Ingredients</label>
-            <div class="controls">
-                <form role="form" class="form-inline" autocomplete="off">
-                    <div class="col-md-3"><div class="form-group">
-                       
-                            <div class="entry input-group">
-                                <input class="form-control" name="fields[]" type="text" placeholder="Ingredient" />
-                                <input class="form-control" name="fields[]" type="number" placeholder="Quantity" />
-                                <input class="form-control" name="fields[]" type="text" placeholder="Units of quantity" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-success btn-add" type="button">
-                                        <span class="glyphicon glyphicon-plus"></span>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
+
+    <form method="post">
+        <div id="itemRows">
+            Ingredient quantity: <input type="text" name="add_qty" size="4" />
+            Ingredient units: <input type="text" name="add_units" size="4" />
+            Ingredient name: <input type="text" name="add_name" />
+            <input class="btn btn-success" onclick="addRow(this.form);" type="button" value="Add row" />
         </div>
-    </div>
-   
+    </form>
+
     <!--<div class="form-group">-->
         <!--<input type="email" class="form-control" id="inputEmail" placeholder="Email">-->
         <!--<label class="inputtime" for="inputhour">hour(s)</label>-->
