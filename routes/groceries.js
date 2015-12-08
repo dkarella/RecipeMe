@@ -30,7 +30,9 @@ router.get('/', function(req, res){
                     }
                 });
             }
-            res.sendStatus(200);
+            else{
+                res.json({});
+            }
         }
     });
 });
