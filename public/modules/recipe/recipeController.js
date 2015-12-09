@@ -24,6 +24,16 @@ angular.module('app').controller('recipeController', ['$scope', '$http', '$route
                 }
             )
         };
+
+        $scope.addToCookbook = function(){
+            console.log('hello: ' + $scope.recipe._id);
+            $http.get('api/recipes/save/' + $scope.recipe._id).then(
+                function(){
+                    console.log('hello there!');
+                    $scope.message = 'Successfuly added recipe to your cookbook!';
+                }
+            )
+        };
 }]);
 
 //{

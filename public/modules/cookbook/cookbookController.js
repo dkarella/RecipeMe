@@ -121,7 +121,7 @@ angular.module('app').controller('cookbookController', ['$scope', '$http', '$loc
         $scope.recipe = {
             name: $scope.recipeName,
             description: $scope.description,
-            picture: "",
+            picture: "assets/swag_fish_soup.jpg",
             servingSize: $scope.servingSize,
             difficulty: $scope.difficulty,
             hours: $scope.hours,

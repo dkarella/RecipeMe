@@ -23,6 +23,17 @@ router.get('/:id', function(req, res){
     });
 });
 
+router.get('/save/:id', function(req, res){
+    console.log(req.params.id);
+
+    Recipes.update({_id:req.params.id}, {$set : {saved:true}}, {}, function(err){
+        if(err) res.sendStatus(400);
+        else{
+            res.sendStatus(200);
+        }
+    });
+});
+
 router.post('/create', function(req, res){
     console.log(req.body);
 
