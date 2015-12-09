@@ -9,6 +9,7 @@ body {
     background-color: white;
     padding-top: 30px;
 }
+
 .entry:not(:first-of-type)
 {
     margin-top: 10px;

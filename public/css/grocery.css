@@ -1,0 +1,9 @@
+.grocery li {
+    list-style: none;
+    padding-left: 350px;
+}
+
+.grocery label {
+    padding-right: 6px;
+}
+

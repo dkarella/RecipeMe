@@ -2,12 +2,8 @@ angular.module('app').controller('groceryController', ['$scope', '$http', '$loca
     $scope.ingredients = [];
     $http.get('/api/groceries/').then(
             function(recipes){
-                for(i = 0; i < recipes.data.length; i++){
-                    for(j = 0; j < recipes.data[i].ingredients.length; j++){
-                        $scope.ingredients.push(recipes.data[i].ingredients[j]);
-                    }
-                }
-                console.log($scope.ingredients[0]);
+                $scope.recipes = recipes.data;
+                console.log($scope.recipes);
             },
             function(){
                 $location.url('/');
