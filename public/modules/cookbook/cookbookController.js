@@ -1,6 +1,47 @@
 angular.module('app').controller('cookbookController', ['$scope', '$http', '$location', '$compile', function($scope, $http, $location, $compile){
+    $scope.recipe;
     $scope.recipes = [];
     $scope.allrecipes = [];
+
+    $scope.recipeName = "";
+    $scope.description = "";
+
+    $scope.ingredients = [];
+    $scope.finalIngredient = [];
+    $scope.finalIngredient.push(0);
+    $scope.ingredientList = [{
+        name: "",
+        unit: "",
+        prep: ""
+    }]
+
+    $scope.steps = [];
+    $scope.finalStep = [];
+    $scope.finalStep.push(1);
+    $scope.stepList = [{
+        number: 1,
+        text: ""
+    }]
+
+    $scope.servingSize;
+    $scope.difficulty = "";
+    $scope.hours;
+    $scope.minutes;
+    $scope.tags = "";
+    $scope.actualTags = [];
+
+    $scope.cookbook;
+
+    $scope.fakePrivacy = "";
+    $scope.privacy;
+
+    $scope.$watch('fakePrivacy', function(){
+        $scope.privacy = ($scope.fakePrivacy == "true")
+    })
+    $scope.$watch('tags', function() {
+        $scope.actualTags = $scope.tags.split(", ");
+    });
+
     $scope.dropdown = ["Italian Feast", "Weeknight Meals", "Quick Desserts"];
     $http.get('/api/recipes/').then(
             function(recipes){
@@ -29,6 +70,74 @@ angular.module('app').controller('cookbookController', ['$scope', '$http', '$loc
                 $scope.recipes.push($scope.allrecipes[i]);
             }
         }
+    };
+    $scope.addRowSteps = function()
+    {
+        $scope.steps.push($scope.finalStep[0]);
+        $scope.finalStep[0]++;
+        $scope.stepList.push(
+        {
+            number: $scope.finalStep[0],
+            text: ""
+        });
+    };
+    $scope.removeRowSteps = function(value)
+    {
+        // console.log(value);
+        for(i = value-1; i < $scope.steps.length; i++)
+        {
+            $scope.steps[i]--;
+            $scope.stepList[i].number--;
+        }
+        $scope.stepList[$scope.stepList.length-1].number--;
+        $scope.finalStep[0]--;
+        $scope.steps.splice(value-1, 1);
+        $scope.stepList.splice(value-1, 1);
+    };
+    $scope.addRow = function()
+    {
+        $scope.ingredients.push($scope.finalIngredient[0]);
+        $scope.finalIngredient[0]++;
+        $scope.ingredientList.push(
+        {
+            name: "",
+            unit: "",
+            prep: ""
+        });
+    };
+    $scope.removeRow = function(value)
+    {
+        for(i = value; i < $scope.ingredients.length; i++)
+        {
+            $scope.ingredients[i]--;
+        }
+        $scope.finalIngredient[0]--;
+        $scope.ingredients.splice(value, 1);
+        $scope.ingredientList.splice(value, 1);
+    };
+
+    $scope.submit = function()
+    {
+        $scope.recipe = {
+            name: $scope.recipeName,
+            description: $scope.description,
+            picture: "",
+            servingSize: $scope.servingSize,
+            difficulty: $scope.difficulty,
+            hours: $scope.hours,
+            minutes: $scope.minutes,
+            saved: true,
+            privacy: $scope.privacy,
+            cookbook: $scope.cookbook,
+            tags: $scope.actualTags,
+            ingredients: $scope.ingredientList,
+            steps: $scope.stepList
+        }
+        $http.post('/api/recipes/create', $scope.recipe).then(
+            function(){
+                $location.url('/');
+            }
+        );
     }
 
     $("#nextto2").click(function(){
@@ -73,20 +182,20 @@ angular.module('app').controller('cookbookController', ['$scope', '$http', '$loc
     });
 }]);
 
-var rowNum = 0;
-function addRow(frm) {
-    rowNum ++;
-    var row = '<p id="rowNum'+rowNum+'">' +
-        'Quantity: <input type="text" name="qty[]" size="5" value="'+frm.add_qty.value+'"> ' +
-        'Unit: <input type="text" name="add_units" size="5" /> ' +
-        'Ingredient: <input type="text" name="name[]" value="'+frm.add_name.value+'"> ' +
-        '<input class="btn btn-danger" type="button" value="Remove" onclick="removeRow('+rowNum+');"></p>';
+// var rowNum = 0;
+// function addRow(frm) {
+//     rowNum ++;
+//     var row = '<p id="rowNum'+rowNum+'">' +
+//         'Quantity: <input type="text" name="qty[]" size="5" value="'+frm.add_qty.value+'"> ' +
+//         'Unit: <input type="text" name="add_units" size="5" /> ' +
+//         'Ingredient: <input type="text" name="name[]" value="'+frm.add_name.value+'"> ' +
+//         '<input class="btn btn-danger" type="button" value="Remove" onclick="removeRow('+rowNum+');"></p>';
 
-    jQuery('#itemRows').append(row);
-    frm.add_qty.value = '';
-    frm.add_name.value = '';
-}
+//     jQuery('#itemRows').append(row);
+//     frm.add_qty.value = '';
+//     frm.add_name.value = '';
+// }
 
-function removeRow(rnum) {
-    jQuery('#rowNum'+rnum).remove();
-}
+// function removeRow(rnum) {
+//     jQuery('#rowNum'+rnum).remove();
+// }
