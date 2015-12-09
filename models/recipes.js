@@ -15,6 +15,7 @@ var RecipeSchema = new Schema({
     saved: Boolean,
     private: Boolean,
     cookbook: String,
+    tags: [String],
     ingredients: [{
         name: String,
         unit: String,

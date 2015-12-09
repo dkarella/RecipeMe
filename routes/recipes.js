@@ -12,6 +12,17 @@ router.get('/', function(req, res){
     });
 });
 
+router.get('/:id', function(req, res){
+    console.log(req.params.id);
+
+    Recipes.find({_id:req.params.id}, function(err, docs){
+        if(err) res.sendStatus(400);
+        else{
+            res.json(docs);
+        }
+    });
+});
+
 router.post('/create', function(req, res){
     console.log(req.body);
 
