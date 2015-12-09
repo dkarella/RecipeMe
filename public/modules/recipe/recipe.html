@@ -37,7 +37,17 @@
             <h3>Ingredients</h3>
             <ul >
                 <li ng-repeat="ingredient in recipe.ingredients">
-                    {{ingredient.quantity}} {{ingredient.unit}} {{ingredient.name}}, {{ingredient.prep}}
+                    <div ng-if="ingredient.prep">
+                        {{ingredient.quantity}}
+                        {{ingredient.unit}}
+                        {{ingredient.name}},
+                        {{ingredient.prep}}
+                    </div>
+                    <div ng-if="!ingredient.prep">
+                        {{ingredient.quantity}}
+                        {{ingredient.unit}}
+                        {{ingredient.name}}
+                    </div>
                 </li>
             </ul>
         </div>

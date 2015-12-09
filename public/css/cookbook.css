@@ -89,3 +89,7 @@ input[type="radio"] {
 #nextto2, #nextto3, #nextto4, #nextto5, #nextto6, #finish {
     right: 50px;
 }
+
+#addIngredient {
+    margin-bottom: 10px;
+}
