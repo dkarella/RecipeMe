@@ -1,4 +1,5 @@
 <div class="container pagecontainer"><!--page container-->
+    <h3>{{message}}</h3>
 <div class="container recipeheader">
     <div class="row">
         <div class="col-md-6 recipepic">
@@ -19,14 +20,14 @@
 <div class="container recipeadd">
     <div class="row">
         <div class="col-md-6 addbutton" id="addcookbook">
-            <a href="#">
+            <button>
                 <h3>Add to cookbook</h3>
-            </a>
+            </button>
         </div>
         <div class="col-md-6 addbutton" id="addgroceries">
-            <a href="#">
+            <button ng-click="addToGroceryList()">
                 <h3>Add to groceries</h3>
-            </a>
+            </button>
         </div>
     </div><!--.row-->
 </div><!--./container .recipeadd-->
@@ -37,7 +38,17 @@
             <h3>Ingredients</h3>
             <ul >
                 <li ng-repeat="ingredient in recipe.ingredients">
-                    {{ingredient.quantity}} {{ingredient.unit}} {{ingredient.name}}, {{ingredient.prep}}
+                    <div ng-if="ingredient.prep">
+                        {{ingredient.quantity}}
+                        {{ingredient.unit}}
+                        {{ingredient.name}},
+                        {{ingredient.prep}}
+                    </div>
+                    <div ng-if="!ingredient.prep">
+                        {{ingredient.quantity}}
+                        {{ingredient.unit}}
+                        {{ingredient.name}}
+                    </div>
                 </li>
             </ul>
         </div>

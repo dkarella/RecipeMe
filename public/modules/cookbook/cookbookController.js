@@ -191,6 +191,7 @@ angular.module('app').controller('cookbookController', ['$scope', '$http', '$loc
 //         'Ingredient: <input type="text" name="name[]" value="'+frm.add_name.value+'"> ' +
 //         '<input class="btn btn-danger" type="button" value="Remove" onclick="removeRow('+rowNum+');"></p>';
 
+
 //     jQuery('#itemRows').append(row);
 //     frm.add_qty.value = '';
 //     frm.add_name.value = '';

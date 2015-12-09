@@ -89,6 +89,7 @@ body {
     border: 1px solid #d3d3d3;
     padding: 15px;
     margin-bottom: 15px;
+    height: 400px;
 }
 
 .recipes img {

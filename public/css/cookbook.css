@@ -29,8 +29,20 @@ input[type="radio"] {
     margin-left: 20px;
 }
 
+#createrecipe {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*The specifics*/
+
 #labeldifficulty {
     padding-left: 15px;
+    padding-right: 22px;
+}
+
+.choosedifficulty {
+    margin-right: 5px;
 }
 
 #labeltime {
@@ -41,7 +53,21 @@ input[type="radio"] {
     margin-right: 8px;
 }
 
-#labeladdtonew {
+#inputhour {
+    margin-left: 23px;
+}
+
+#inputtag {
+    margin-left: 19px;
+}
+
+#tags {
+    margin-bottom: 50px;
+}
+
+/*Almost done*/
+
+#labeladdtonewcookbook {
     margin-left: 14px;
 }
 
@@ -65,9 +91,13 @@ input[type="radio"] {
 #inputrecipedes {
     padding: 5px 10px;
 }
-    
-#tags {
-    margin-bottom: 50px;
+
+#itemRows {
+    margin-left: 50px;
+}
+
+#itemRowsSteps {
+    margin-left: 80px;
 }
 
 .stepsize input[type=text] {
@@ -75,9 +105,43 @@ input[type="radio"] {
     height: 50px;
 }
 
+#labeladdtoexisting {
+    margin-right: 45px;
+}
+
+#labeladdtonewcookbook {
+    margin-right: 16px;
+}
+
+/*Create new cookbook modal*/
+
+#createcookbookmodal hr { 
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ffdab6, #ff8900, #ffdab6);
+    margin-bottom: 50px;
+}
+
+#createcookbookmodal h3 {
+    margin-top: 70px;
+    padding-bottom: 0px;
+}
+
+#createcookbookmodal label {
+    font-size: 1.5em;
+    margin-left: 330px;
+    margin-bottom: 10px;
+}
+
+#createcookbookname {
+    width: 400px;
+    margin: auto;
+}
+
 /*Next and back buttons*/
 
-#backto1, #backto2, #backto3, #backto4, #backto5, #nextto2, #nextto3, #nextto4, #nextto5, #nextto6, #finish {
+#backto1, #backto2, #backto3, #backto4, #backto5, #nextto2, #nextto3, #nextto4, #nextto5, #nextto6, #finish, #createcookbookfinish {
     position: absolute;
     top: 420px;
 }
@@ -86,6 +150,10 @@ input[type="radio"] {
     left: 50px;
 }
 
-#nextto2, #nextto3, #nextto4, #nextto5, #nextto6, #finish {
+#nextto2, #nextto3, #nextto4, #nextto5, #nextto6, #finish, #createcookbookfinish {
     right: 50px;
+}
+
+#addIngredient {
+    margin-bottom: 10px;
 }

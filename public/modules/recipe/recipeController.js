@@ -3,20 +3,29 @@
  */
 angular.module('app').controller('recipeController', ['$scope', '$http', '$routeParams', '$location',
     function($scope, $http, $routeParams, $location){
+        $scope.message = '';
+        var recipeId = $routeParams.id;
+        console.log(recipeId);
+        $http.get('api/recipes/' + recipeId).then(
+            function(recipe){
+                $scope.recipe = recipe.data[0];
+                console.log($scope.recipe);
+            },
+            function(){
+                $location.url('/');
+                $scope.message = "GET failed!";
+            }
+        );
 
-    var recipeId = $routeParams.id;
-    console.log(recipeId);
-    $http.get('api/recipes/' + recipeId).then(
-        function(recipe){
-            $scope.recipe = recipe.data[0];
-            console.log($scope.recipe);
-
-            var f = new Fraction(0.5);
-            console.log(f.numerator + '/' + f.denominator)
-        },
-        function(){
-            $location.url('/');
-            $scope.message = "GET failed!";
-        }
-    );
+        $scope.addToGroceryList = function(){
+            $http.post('api/groceries/add/', {"recipe" : $scope.recipe._id}).then(
+                function(){
+                    $scope.message = 'Successfuly added recipe to grocery list!';
+                }
+            )
+        };
 }]);
+
+//{
+//    "recipe": {"_id": "56655cb56fc867b25b0db84d"}
+//}
