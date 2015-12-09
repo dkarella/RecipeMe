@@ -9,6 +9,9 @@ angular.module('app').controller('cookbookController', ['$scope', '$http', '$loc
                         $scope.recipes.push(recipes.data[i]);
                     }
                 }
+                console.log(recipes.data);
+                console.log($scope.recipes);
+
                 $scope.allrecipes = $scope.recipes;
             },
             function(){
@@ -21,7 +24,7 @@ angular.module('app').controller('cookbookController', ['$scope', '$http', '$loc
         $scope.recipes = [];
         for(i = 0; i < $scope.allrecipes.length; i++)
         {
-            if($scope.allrecipes[i] == $scope.dropdown[value])
+            if($scope.allrecipes[i].cookbook == $scope.dropdown[value])
             {
                 $scope.recipes.push($scope.allrecipes[i]);
             }

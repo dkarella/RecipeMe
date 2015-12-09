@@ -2,16 +2,16 @@
 <div class="container recipeheader">
     <div class="row">
         <div class="col-md-6 recipepic">
-            <img src="../../assets/recipe1.jpg" alt="Spaghetti Bolognese">
+            <img src="{{recipe.picture}}" alt="Spaghetti Bolognese">
         </div>
-        <h1 class="recipetitle">Spaghetti Bolognese</h1>
+        <h1 class="recipetitle">{{recipe.name}}</h1>
         <ul>
-            <li>Serving size: 2</li>
-            <li>Difficulty: Easy</li>
-            <li>Time: 35 min</li>
+            <li>Serving size: {{recipe.servingSize}}</li>
+            <li>Difficulty: {{recipe.difficulty}}</li>
+            <li>Time: {{recipe.hours}} hours {{recipe.minutes}} min</li>
         </ul>
         <hr/>
-        <p>Craving Italian? Try this authentic and delicious spaghetti bolognese.</p>
+        <p>{{recipe.description}}</p>
         <p>- Chef Chris</p>
     </div><!--.row-->
 </div><!--./container .recipeheader-->
@@ -35,28 +35,18 @@
     <div class="row">
         <div class="col-md-5 ingredients">
             <h3>Ingredients</h3>
-            <ul>
-                <li>3 tbsp extra-virgin olive oil</li>
-                <li>1 medium onion, diced</li>
-                <li>2 garlic cloves, peeled and coarsely chopped</li>
-                <li>1 celery stalk, chopped</li>
-                <li>1 carrot, chopped</li>
-                <li>1 lb ground chuck beef</li>
-                <li>1 (28-ounce) can crushed tomatoes</li>
-                <li>1/4 cup flat-leaf Italian parsely</li>
-                <li>8 fresh basil leaves, chiffonade</li>
-                <li>1/4 cup freshly grated pecorino romano or parmesan cheese</li>
+            <ul >
+                <li ng-repeat="ingredient in recipe.ingredients">
+                    {{ingredient.quantity}} {{ingredient.unit}} {{ingredient.name}}, {{ingredient.prep}}
+                </li>
             </ul>
         </div>
         <div class="col-md-7 steps">
             <h3>Steps</h3>
             <ul>
-                <li>1. Add extra-virgin olive oil to a 6 quart pot until almost smoking.</li>
-                <li>2. Add onions and garlic, and saute over medium heat until the onions become very soft, about 8 minutes.</li>
-                <li>3. Add celery and carrots, and saute for 5 minutes.</li>
-                <li>4. Raise heat to high and add the ground beef. Season with salt and pepper. Saute, stirring frequently and breaking  up any large lumps. Cook until meat is no longer pink.</li>
-                <li>5. Add tomatoes, parsley and basil, and cook over medium low heat until the sauce thickens.</li>
-                <li>6. Finish sauce with pecorino romano or parmean cheese. Check for seasoning.</li>
+                <li ng-repeat="step in recipe.steps | orderBy: step.number">
+                    {{step.number}}. {{step.text}}
+                </li>
             </ul>
         </div>
     </div><!--.row-->

@@ -15,8 +15,9 @@ app.config(function($routeProvider){
             templateUrl : 'modules/explore/explore.html', 
             controller: 'exploreController'
         })
-        .when('/recipe/:name', {
-            templateUrl : 'modules/recipe/recipe.html'
+        .when('/recipe/:id', {
+            templateUrl : 'modules/recipe/recipe.html',
+            controller: 'recipeController'
         })
         .when('/groceries', {
             templateUrl: 'modules/grocery/grocery.html',

@@ -14,5 +14,4 @@ angular.module('app').controller('groceryController', ['$scope', '$http', '$loca
                 $scope.message = "GET failed!";
             }
         );
-    
 }]);
