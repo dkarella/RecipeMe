@@ -47,6 +47,10 @@ angular.module('app').controller('cookbookController', ['$scope', '$http', '$loc
         $('#modal4').modal('hide');
         $('#modal5').modal('show');
     });
+    $("#nextto6").click(function(){
+        $('#modal5').modal('hide');
+        $('#modal6').modal('show');
+    });
     $("#backto1").click(function(){
         $('#modal2').modal('hide');
         $('#modal1').modal('show');
@@ -63,14 +67,18 @@ angular.module('app').controller('cookbookController', ['$scope', '$http', '$loc
         $('#modal5').modal('hide');
         $('#modal4').modal('show');
     });
+    $("#backto5").click(function(){
+        $('#modal6').modal('hide');
+        $('#modal5').modal('show');
+    });
 }]);
 
 var rowNum = 0;
 function addRow(frm) {
     rowNum ++;
     var row = '<p id="rowNum'+rowNum+'">' +
-        'Quantity: <input type="text" name="qty[]" size="4" value="'+frm.add_qty.value+'"> ' +
-        'Unit: <input type="text" name="add_units" size="4" /> ' +
+        'Quantity: <input type="text" name="qty[]" size="5" value="'+frm.add_qty.value+'"> ' +
+        'Unit: <input type="text" name="add_units" size="5" /> ' +
         'Ingredient: <input type="text" name="name[]" value="'+frm.add_name.value+'"> ' +
         '<input class="btn btn-danger" type="button" value="Remove" onclick="removeRow('+rowNum+');"></p>';
 

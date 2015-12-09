@@ -1,6 +1,8 @@
 /*Modal*/
 
-#createrecipe {
+.modal .modal-body {
+    max-height: 500px;
+    overflow-y: auto;
 }
 
 .modalbox {
@@ -12,6 +14,10 @@
 .modalbox h3 {
     padding-top: 15px;
     padding-bottom: 10px;
+}
+
+#modal2 h4 {
+    margin-left: 100px;
 }
 
 label {
@@ -48,7 +54,18 @@ input[type="radio"] {
     margin-left: 6px;
 }
 
+#labelrecipename, #labelrecipedes {
+    margin-left: 18px;
+}
 
+#inputrecipedes {
+    margin-top: 6px;
+}
+
+#inputrecipedes {
+    padding: 5px 10px;
+}
+    
 #tags {
     margin-bottom: 50px;
 }
@@ -60,15 +77,15 @@ input[type="radio"] {
 
 /*Next and back buttons*/
 
-#backto1, #backto2, #backto3, #backto4, #nextto2, #nextto3, #nextto4, #nextto5, #finish {
+#backto1, #backto2, #backto3, #backto4, #backto5, #nextto2, #nextto3, #nextto4, #nextto5, #nextto6, #finish {
     position: absolute;
     top: 420px;
 }
 
-#backto1, #backto2, #backto3, #backto4 {
+#backto1, #backto2, #backto3, #backto4, #backto5{
     left: 50px;
 }
 
-#nextto2, #nextto3, #nextto4, #nextto5, #finish {
+#nextto2, #nextto3, #nextto4, #nextto5, #nextto6, #finish {
     right: 50px;
 }

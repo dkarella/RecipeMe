@@ -31,17 +31,25 @@
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal1" aria-hidden="true"><!--modal1-->
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-                <div class="modalbox">
-                    <h3>What are the steps?</h3>
-                    <form class="form-inline stepsize" >
-                        <div id="itemRows">
-                            1. <textarea name="addstep" id="addstep" cols="80" rows="2"></textarea>
-                            <input class="btn btn-success" onclick="addRow(this.form);" type="button" value="Add step" id="addstepbutton" />
-                        </div>
-                        <div class="clearfix"></div>
-                        <button type="submit" class="btn btn-default button-next pull-right" id="nextto2">Next</button>
-                    </form>
-                </div><!--/.modalbox-->
+            <div class="modalbox">
+                <form class="form">
+                    <br/>
+                    <h3>First thing's first</h3>            
+                    <div class="form-group">
+                        <label for="recipename">Recipe name:</label>
+                        <input type="text" class="form-control" id="inputrecipename">
+                    </div>
+                    <br/>
+                    <div class="row"><!--Recipe description-->
+                        <div class="form-group">
+                            <label for="recipedes" id="labelrecipedes">Description:<label>
+                            <textarea name="input" id="inputrecipedes" cols="76" rows="2" name="recipedes" placeholder="Enter a short recipe description here"></textarea>
+                        </div><!--/.form-group-->
+                    </div><!--/.row-->
+                    <div class="clearfix"></div>
+                    <button type="submit" class="btn btn-default button-next pull-right" id="nextto2">Next</button>
+                </form>
+            </div><!--/.modalbox-->
         </div><!--/.modal-content-->
     </div><!--/.modal-dialog modal-lg-->
 </div><!--/.modal fade-->
@@ -50,12 +58,14 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
                 <div class="modalbox">
-                    <h3>What are the ingredients?</h3>
+                   <h3>What are the ingredients?</h3>             
+ <h4>Quantity*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ingredient*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preparation</h4> 
                     <form class="form-inline">
                         <div id="itemRows">
-                            Quantity: <input type="text" name="add_qty" size="4" />
-                            Unit: <input type="text" name="add_units" size="4" />
-                            Ingredient: <input type="text" name="add_name" />
+                            <input type="number" name="add_qty" size="5" />
+                            <input type="text" name="add_units" size="5" />
+                            <input type="text" name="name" />
+                            <input type="text" name="add_prep" />
                             <input class="btn btn-success" onclick="addRow(this.form);" type="button" value="Add ingredient" />
                         </div>
                         <div class="clearfix"></div>
@@ -68,6 +78,25 @@
 </div><!--/.modal fade-->
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal3" aria-hidden="true"><!--modal3-->
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+                <div class="modalbox">
+                    <h3>What are the steps?</h3>
+                    <form class="form-inline stepsize" >
+                        <div id="itemRowssteps">
+                            1. <textarea name="addstep" id="addstep" cols="80" rows="2"></textarea>
+                            <input class="btn btn-success" onclick="addRow(this.form);" type="button" value="Add step" id="addstepbutton" />
+                        </div>
+                        <div class="clearfix"></div>
+                        <button type="submit" class="btn btn-default button-previous pull-left" id="backto2">Back</button>
+                        <button type="submit" class="btn btn-default button-next pull-right" id="nextto4">Next</button>
+                    </form>
+                </div><!--/.modalbox-->
+        </div><!--/.modal-content-->
+    </div><!--/.modal-dialog modal-lg-->
+</div><!--/.modal fade-->
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal4" aria-hidden="true"><!--modal4-->
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modalbox">
@@ -135,15 +164,15 @@
                         </div><!--.col-md-6-->
                     </div><!--/.row-->
                     <div class="clearfix"></div>
-                    <button type="submit" class="btn btn-default button-previous pull-left" id="backto2">Back</button>
-                    <button type="submit" class="btn btn-default button-next pull-right" id="nextto4">Next</button>
+                    <button type="submit" class="btn btn-default button-previous pull-left" id="backto3">Back</button>
+                    <button type="submit" class="btn btn-default button-next pull-right" id="nextto5">Next</button>
                 </form>
             </div><!--/.modalbox-->
         </div><!--/.modal-content-->
     </div><!--/.modal-dialog modal-lg-->
 </div><!--/.modal fade-->
 
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal4" aria-hidden="true"><!--modal4-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal5" aria-hidden="true"><!--modal5-->
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modalbox">
@@ -154,15 +183,15 @@
                         <input type="file" id="inputpicture">
                     </div>
                     <div class="clearfix"></div>
-                    <button type="submit" class="btn btn-default button-previous pull-left" id="backto3">Back</button>
-                    <button type="submit" class="btn btn-default button-next pull-right" id="nextto5">Next</button>
+                    <button type="submit" class="btn btn-default button-previous pull-left" id="backto4">Back</button>
+                    <button type="submit" class="btn btn-default button-next pull-right" id="nextto6">Next</button>
                 </form>
             </div><!--/.modalbox-->
         </div><!--/.modal-content-->
     </div><!--/.modal-dialog modal-lg-->
 </div><!--/.modal fade-->
 
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal5" aria-hidden="true"><!--modal5-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal6" aria-hidden="true"><!--modal6-->
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modalbox">
@@ -182,8 +211,8 @@
                     <br/><br/>                    
                     <div class="row"><!--Create cookbook-->
                             <div class="form-group">
-                                <label for="inputservingsize" id="labeladdtonew"><strong>Or</strong> add to a new cookbook called:</label>
-                                <input type="text" class="form-control" id="inputname" name="recipename">
+                                <label for="inputservingsize" id="labeladdtonewcookbook"><strong>Or</strong> add to a new cookbook called:</label>
+                                <input type="text" class="form-control" id="inputnewcookbookname" name="addtonewcookbook">
                             </div><!--/.form-group-->
                     </div><!--/.row-->
                     <br/>
@@ -199,7 +228,7 @@
                         <input type="radio" name="privacy" value="private"> Private - Only you will be able to see this top secret recipe
                     </label>
                     <div class="clearfix"></div>
-                    <button type="submit" class="btn btn-default button-previous pull-left" id="backto4">Back</button>
+                    <button type="submit" class="btn btn-default button-previous pull-left" id="backto5">Back</button>
                     <button type="submit" class="btn btn-default button-next pull-right" id="finish">Finish</button>
                 </form>
             </div><!--/.modalbox-->
