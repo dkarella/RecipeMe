@@ -26,57 +26,165 @@
 </div><!--/.row-->
 
 <!--Modal-->
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bs-example-modal-lg">Create new recipe</button>
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal2" id="createrecipe">Create new recipe</button>
 
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal2" aria-hidden="true"><!--modal2-->
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <h2>Add a Recipe</h2>
-            <form>
-               <div class="container modalbox">
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <div class="form-group">
-                                <label for="inputname">Name</label>
-                                <input type="text" class="form-control" id="inputname" name="recipename">
-                            </div><!--.form-group-->
-                        </div><!--.col-md-3-->
-                    </div><!--/.row-->
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <div class="form-group">
-                                <h3>Ingredients</h3>
-                                <label for="inputingredient">Ingredient</label>
-                                <input type="text" class="form-control" id="inputingredient" placeholder="Apple">
-                            </div><!--.form-group-->
-                        </div><!--.col-md-3-->
-                    </div><!--/.row-->
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-            </div><!--/.container-->
+                <div class="modalbox">
+                    <h3>What are the ingredients?</h3>
+                    <form class="form-inline">
+                        <div id="itemRows">
+                            Quantity: <input type="text" name="add_qty" size="4" />
+                            Unit: <input type="text" name="add_units" size="4" />
+                            Ingredient: <input type="text" name="add_name" />
+                            <input class="btn btn-success" onclick="addRow(this.form);" type="button" value="Add row" />
+                        </div>
+                        <div class="clearfix"></div>
+                        <button type="submit" class="btn btn-default button-previous pull-left" id="backto1">Back</button>
+                        <button type="submit" class="btn btn-default button-next pull-right" id="nextto3">Next</button>
+                    </form>
+                </div><!--/.modalbox-->
         </div><!--/.modal-content-->
     </div><!--/.modal-dialog modal-lg-->
 </div><!--/.modal fade-->
 
-<div class="container">
-    <form method="post">
-        <div id="itemRows">
-            Ingredient quantity: <input type="text" name="add_qty" size="4" />
-            Ingredient units: <input type="text" name="add_units" size="4" />
-            Ingredient name: <input type="text" name="add_name" />
-            <input class="btn btn-success" onclick="addRow(this.form);" type="button" value="Add row" />
-        </div>
-    </form>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal3" aria-hidden="true"><!--modal3-->
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modalbox">
+                <form class="form-inline">
+                    <h3>More about your recipe</h3>
+                    <label>Serving size:</label><!--Serving size radio buttons-->
+                    <label class="chooseservingsize">
+                    <input type="radio" name="ServingRadioOptions" id="servingradio1" value="option1"> 1
+                    </label>
+                    <label class="chooseservingsize">
+                      <input type="radio" name="ServingRadioOptions" id="servingradio2" value="option2"> 2
+                    </label>
+                    <label class="chooseservingsize">
+                      <input type="radio" name="ServingRadioOptions" id="servingradio3" value="option3"> 3
+                    </label>
+                    <label class="chooseservingsize">
+                      <input type="radio" name="ServingRadioOptions" id="servingradio3" value="option4"> 4
+                    </label>
+                    <label class="chooseservingsize">
+                      <input type="radio" name="ServingRadioOptions" id="servingradio3" value="option5"> 5
+                    </label>
+                    <label class="chooseservingsize">
+                      <input type="radio" name="ServingRadioOptions" id="servingradio3" value="option6"> 6
+                    </label>
+                    <label class="chooseservingsize">
+                      <input type="radio" name="ServingRadioOptions" id="servingradio3" value="option7"> 7
+                    </label>
+                    <label class="chooseservingsize">
+                      <input type="radio" name="ServingRadioOptions" id="servingradio3" value="option8"> 8
+                    </label>
+                    <div class="row"><!--Serving size other field-->
+                        <div class="col-lg-1">
+                            <div class="form-group">
+                                <label for="inputservingsize">Other:</label>
+                                <input type="number" class="form-control" id="inputname" name="recipename">
+                            </div><!--/.form-group-->
+                        </div><!--/.col-md-3-->
+                    </div><!--/.row-->
+                    <div class="clearfix"></div>
+                    <br/>
+                    <div class="row" id="labeldifficulty"><!--Difficulty-->
+                        <label for="choosedifficulty">Difficulty:</label>
+                            <label class="choosedifficulty">
+                          <input type="radio" name="DifficultyRadioOptions" id="difficultyradio1" value="option1"> Easy
+                        </label>
+                        <label class="choosedifficulty">
+                            <input type="radio" name="DifficultyRadioOptions" id="difficultyradio1" value="option2"> Medium
+                        </label>
+                        <label class="choosedifficulty">
+                            <input type="radio" name="DifficultyRadioOptions" id="difficultyradio1" value="option3"> Hard
+                        </label>
+                    </div>
+                    <br/>
+                    <div class="form-group"><!--Time-->
+                       <label id="labeltime">Time:</label>
+                        <input type="number" class="form-control" id="inputhour" placeholder="1">
+                        <label class="inputtime" id="labelhour" for="inputhour">hour(s)</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="inputmin" placeholder="30">
+                        <label class="inputtime" for="inputmin">minutes</label>
+                    </div>
+                    <br/><br/>
+                    <div class="row" id="tags"><!--Recipe tags-->
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label for="inputtag">Recipe tags:</label>
+                                <input type="text" class="form-control" id="inputtag" placeholder="Dinner">
+                            </div><!--.form-group-->
+                        </div><!--.col-md-2-->
+                    </div><!--/.row-->
+                    <div class="clearfix"></div>
+                    <button type="submit" class="btn btn-default button-previous pull-left" id="backto2">Back</button>
+                    <button type="submit" class="btn btn-default button-next pull-right" id="nextto4">Next</button>
+                </form>
+            </div><!--/.modalbox-->
+        </div><!--/.modal-content-->
+    </div><!--/.modal-dialog modal-lg-->
+</div><!--/.modal fade-->
 
-    <!--<div class="form-group">-->
-        <!--<input type="email" class="form-control" id="inputEmail" placeholder="Email">-->
-        <!--<label class="inputtime" for="inputhour">hour(s)</label>-->
-    <!--</div>-->
-    <!--<div class="form-group">-->
-        <!--<input type="password" class="form-control" id="inputPassword" placeholder="Password">-->
-        <!--<label class="inputtime" for="inputmin">minutes</label>-->
-    <!--</div>-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal4" aria-hidden="true"><!--modal4-->
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modalbox">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <h3>Add a picture (optional)</h3>
+                        <label for="exampleInputFile">Add a photo</label>
+                        <input type="file" id="inputpicture">
+                    </div>
+                    <div class="clearfix"></div>
+                    <button type="submit" class="btn btn-default button-previous pull-left" id="backto3">Back</button>
+                    <button type="submit" class="btn btn-default button-next pull-right" id="nextto5">Next</button>
+                </form>
+            </div><!--/.modalbox-->
+        </div><!--/.modal-content-->
+    </div><!--/.modal-dialog modal-lg-->
+</div><!--/.modal fade-->
 
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal5" aria-hidden="true"><!--modal5-->
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modalbox">
+                <form class="form-inline">
+                    <h3>Almost done</h3>
+                        <ul class="dropdown-menu" aria-labelledby="addcookbookdropdown">
+                            <li><a href="#">Italian Feast</a></li>
+                            <li><a href="#">Weeknight Meals</a></li>
+                            <li><a href="#">Quick Desserts</a></li>
+                        </ul>
+                    <label>Who can see this recipe?</label><!--Privacy-->
+                    <label class="privacy" for="public">
+                        <input type="radio" name="public" value="public"> Public
+                    </label>
+                    <label class="privacy" for="private">
+                      <input type="radio" name="private" value="private"> Private
+                    </label>
+                    <div class="row"><!--Create cookbook-->
+                        <div class="col-lg-1">
+                            <div class="form-group">
+                                <label for="inputservingsize">Add to a new cookbook called:</label>
+                                <input type="number" class="form-control" id="inputname" name="recipename">
+                            </div><!--/.form-group-->
+                        </div><!--/.col-md-3-->
+                    </div><!--/.row-->
+                    <div class="clearfix"></div>
+                    <br/>
+                    <div class="clearfix"></div>
+                    <button type="submit" class="btn btn-default button-previous pull-left" id="backto4">Back</button>
+                    <button type="submit" class="btn btn-default button-next pull-right" id="finish">Finish</button>
+                </form>
+            </div><!--/.modalbox-->
+        </div><!--/.modal-content-->
+    </div><!--/.modal-dialog modal-lg-->
+</div><!--/.modal fade-->
 
     <div class="row">
     <div class="container">

@@ -1,0 +1,55 @@
+/*Modal*/
+
+#createrecipe {
+}
+
+.modalbox {
+    padding: 15px 50px;
+    height: 500px;
+    position: relative;
+}
+
+.modalbox h3 {
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+label {
+    font-weight: 300;
+    font-size: 1.2em;
+}
+
+input[type="radio"] {
+    margin-left: 20px;
+}
+
+#labeldifficulty {
+    padding-left: 15px;
+}
+
+#labeltime {
+    margin-right: 45px;
+}
+
+#labelhour {
+    margin-right: 8px;
+}
+
+#tags {
+    margin-bottom: 50px;
+}
+
+/*Next and back buttons*/
+
+#backto1, #backto2, #backto3, #backto4, #nextto2, #nextto3, #nextto4, #nextto5, #finish {
+    position: absolute;
+    top: 420px;
+}
+
+#backto1, #backto2, #backto3, #backto4, #finish {
+    left: 50px;
+}
+
+#nextto2, #nextto3, #nextto4, #nextto5, #finish {
+    right: 50px;
+}
