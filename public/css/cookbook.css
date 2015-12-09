@@ -35,8 +35,27 @@ input[type="radio"] {
     margin-right: 8px;
 }
 
+#labeladdtonew {
+    margin-left: 14px;
+}
+
+#labeladdtoexisting {
+    margin-top: 10px;
+}
+
+#addstepbutton {
+    margin-top: -22px;
+    margin-left: 6px;
+}
+
+
 #tags {
     margin-bottom: 50px;
+}
+
+.stepsize input[type=text] {
+    width: 600px;
+    height: 50px;
 }
 
 /*Next and back buttons*/
@@ -46,7 +65,7 @@ input[type="radio"] {
     top: 420px;
 }
 
-#backto1, #backto2, #backto3, #backto4, #finish {
+#backto1, #backto2, #backto3, #backto4 {
     left: 50px;
 }
 
