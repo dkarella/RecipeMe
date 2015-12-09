@@ -14,7 +14,7 @@
         </div>
         <div class="col-lg-3 navbar-right"><!--Search bar-->
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" ng-model="query" placeholder="Search">
                     <span class="input-group-btn">
                     <button class="btn btn-default" type="button">
                         <span class="glyphicon glyphicon-search"></span>
@@ -209,7 +209,7 @@
 
     <div class="row">
     <div class="container">
-        <div ng-repeat="recipe in recipes" class="col-md-4 recipes">
+        <div ng-repeat="recipe in recipes | filter:query" class="col-md-4 recipes">
             <a href="#/recipe/{{recipe.name}}">
                 <img src="{{recipe.picture}}">
                 <h2>{{recipe.name}}</h2>
