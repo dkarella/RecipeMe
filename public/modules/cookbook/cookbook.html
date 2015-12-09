@@ -12,6 +12,7 @@
                 <li><a href="" ng-click="filter(2)">Quick Desserts</a></li>
             </ul>
             <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal1" id="createrecipe">Create new recipe</button><!-- Create new recipe button to open modals-->
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#createcookbookmodal" id="createcookbook">Create new cookbook</button><!-- Create new cookbook button-->
         </div>
         <div class="col-lg-3 navbar-right"><!--Search bar-->
             <div class="input-group">
@@ -229,6 +230,25 @@
                     <div class="clearfix"></div>
                     <button type="submit" class="btn btn-default button-previous pull-left" id="backto5">Back</button>
                     <button type="submit" class="btn btn-default button-next pull-right" id="finish">Finish</button>
+                </form>
+            </div><!--/.modalbox-->
+        </div><!--/.modal-content-->
+    </div><!--/.modal-dialog modal-lg-->
+</div><!--/.modal fade-->
+    
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="createcookbookmodal" aria-hidden="true"><!--#createcookbookmodal-->
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modalbox">
+                <form class="form">
+                    <h3>Create a new cookbook</h3>   
+                    <hr/>         
+                    <div class="form-group">
+                        <label for="createcookbookname">Cookbook name:</label>
+                        <input type="text" class="form-control" id="createcookbookname">
+                    </div>    
+                    <div class="clearfix"></div>
+                    <button type="submit" class="btn btn-default button-next pull-right" id="createcookbookfinish">Finish</button>
                 </form>
             </div><!--/.modalbox-->
         </div><!--/.modal-content-->
