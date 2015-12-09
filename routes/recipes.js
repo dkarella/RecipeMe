@@ -35,7 +35,7 @@ router.post('/create', function(req, res){
         console.log('Recipe created!');
     });
 
-    // send success
+    // send status OK
     res.sendStatus(200);
 });
 

@@ -132,13 +132,13 @@ angular.module('app').controller('cookbookController', ['$scope', '$http', '$loc
             tags: $scope.actualTags,
             ingredients: $scope.ingredientList,
             steps: $scope.stepList
-        }
+        };
         $http.post('/api/recipes/create', $scope.recipe).then(
             function(){
-                $location.url('/');
+                location.reload();
             }
         );
-    }
+    };
 
     $("#nextto2").click(function(){
         $('#modal1').modal('hide');

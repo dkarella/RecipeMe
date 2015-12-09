@@ -1,3 +1,5 @@
+html, body, #view { height: 100%; }
+
 body {
     font-family: "Roboto", "Arial", sans-serif;
     margin-top: 140px;
@@ -8,6 +10,8 @@ body {
 .pagecontainer {
     background-color: white;
     padding-top: 30px;
+    height: 100%;
+    display: table;
 }
 
 .entry:not(:first-of-type)
