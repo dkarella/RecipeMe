@@ -11,6 +11,7 @@
                 <li><a href="" ng-click="filter(1)">Weeknight Meals</a></li>
                 <li><a href="" ng-click="filter(2)">Quick Desserts</a></li>
             </ul>
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal1" id="createrecipe">Create new recipe</button><!-- Create new recipe button to open modals-->
         </div>
         <div class="col-lg-3 navbar-right"><!--Search bar-->
             <div class="input-group">
@@ -26,8 +27,6 @@
 </div><!--/.row-->
 
 <!--Modal-->
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal1" id="createrecipe">Create new recipe</button>
-
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modal1" aria-hidden="true"><!--modal1-->
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -83,8 +82,8 @@
                 <div class="modalbox">
                     <h3>What are the steps?</h3>
                     <form class="form-inline stepsize" >
-                        <div id="itemRowssteps">
-                            1. <textarea name="addstep" id="addstep" cols="80" rows="2"></textarea>
+                        <div id="itemRowsSteps">
+                            1. <textarea name="addstep" id="addstep" cols="70" rows="2"></textarea>
                             <input class="btn btn-success" onclick="addRow(this.form);" type="button" value="Add step" id="addstepbutton" />
                         </div>
                         <div class="clearfix"></div>
@@ -102,7 +101,7 @@
             <div class="modalbox">
                 <form class="form-inline">
                     <h3>The specifics</h3>
-                    <label>Serving size:</label><!--Serving size radio buttons-->
+                    <label id="labelservingsize">Serving size:</label><!--Serving size radio buttons-->
                     <label class="chooseservingsize">
                     <input type="radio" name="ServingRadioOptions" id="servingradio1" value="option1"> 1
                     </label>
@@ -132,16 +131,16 @@
                     </label>
                     <div class="clearfix"></div>
                     <br/>
-                    <div class="row" id="labeldifficulty"><!--Difficulty-->
-                        <label for="choosedifficulty">Difficulty:</label>
+                    <div class="row"><!--Difficulty-->
+                        <label for="choosedifficulty" id="labeldifficulty">Difficulty:</label>
                             <label class="choosedifficulty">
                           <input type="radio" name="DifficultyRadioOptions" id="difficultyradio1" value="option1"> Easy
                         </label>
                         <label class="choosedifficulty">
-                            <input type="radio" name="DifficultyRadioOptions" id="difficultyradio1" value="option2"> Medium
+                            <input type="radio" name="DifficultyRadioOptions" id="difficultyradio2" value="option2"> Medium
                         </label>
                         <label class="choosedifficulty">
-                            <input type="radio" name="DifficultyRadioOptions" id="difficultyradio1" value="option3"> Hard
+                            <input type="radio" name="DifficultyRadioOptions" id="difficultyradio3" value="option3"> Hard
                         </label>
                     </div>
                     <br/>
@@ -200,7 +199,7 @@
                     <h3>Almost done</h3>
                     <h4>Put your recipe in a cookbook</h4>
                     <label id="labeladdtoexisting">Add to an existing cookbook:</label>
-                    <div class="form-group">
+                    <div class="form-group" id="chooseaddtoexisting">
                         <select class="form-control">
                             <option selected>Select cookbook</option>
                             <option>Italian Feast</option>
@@ -221,11 +220,11 @@
                     <label>Who can see this recipe?</label><!--Privacy-->
                     <br/>
                     <label class="privacy" for="public">
-                        <input type="radio" name="privacy" value="public" checked> Public - Everyone will be able to see this recipe
+                        <input type="radio" name="privacy" value="public" checked> Public &nbsp;&nbsp;-&nbsp; Everyone will be able to see this recipe
                     </label>
                     <br/>
                     <label class="privacy" for="private">
-                        <input type="radio" name="privacy" value="private"> Private - Only you will be able to see this top secret recipe
+                        <input type="radio" name="privacy" value="private"> Private &nbsp;-&nbsp; Only you will be able to see this top secret recipe
                     </label>
                     <div class="clearfix"></div>
                     <button type="submit" class="btn btn-default button-previous pull-left" id="backto5">Back</button>

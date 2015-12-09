@@ -29,8 +29,15 @@ input[type="radio"] {
     margin-left: 20px;
 }
 
+/*The specifics*/
+
 #labeldifficulty {
     padding-left: 15px;
+    padding-right: 22px;
+}
+
+.choosedifficulty {
+    margin-right: 5px;
 }
 
 #labeltime {
@@ -41,7 +48,21 @@ input[type="radio"] {
     margin-right: 8px;
 }
 
-#labeladdtonew {
+#inputhour {
+    margin-left: 23px;
+}
+
+#inputtag {
+    margin-left: 19px;
+}
+
+#tags {
+    margin-bottom: 50px;
+}
+
+/*Almost done*/
+
+#labeladdtonewcookbook {
     margin-left: 14px;
 }
 
@@ -65,14 +86,26 @@ input[type="radio"] {
 #inputrecipedes {
     padding: 5px 10px;
 }
-    
-#tags {
-    margin-bottom: 50px;
+
+#itemRows {
+    margin-left: 50px;
+}
+
+#itemRowsSteps {
+    margin-left: 80px;
 }
 
 .stepsize input[type=text] {
     width: 600px;
     height: 50px;
+}
+
+#labeladdtoexisting {
+    margin-right: 45px;
+}
+
+#labeladdtonewcookbook {
+    margin-right: 16px;
 }
 
 /*Next and back buttons*/
