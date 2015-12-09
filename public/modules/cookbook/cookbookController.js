@@ -1,7 +1,7 @@
 angular.module('app').controller('cookbookController', ['$scope', '$http', '$location', '$compile', function($scope, $http, $location, $compile){
-    //$scope.recipes = [];
-    //$scope.item = 1;
-    //var item = 1;
+    $scope.recipes = [];
+    $scope.allrecipes = [];
+    $scope.dropdown = ["Italian Feast", "Weeknight Meals", "Quick Desserts"];
     $http.get('/api/recipes/').then(
             function(recipes){
                 for(i = 0; i < recipes.data.length; i++){
@@ -9,12 +9,25 @@ angular.module('app').controller('cookbookController', ['$scope', '$http', '$loc
                         $scope.recipes.push(recipes.data[i]);
                     }
                 }
+                $scope.allrecipes = $scope.recipes;
             },
             function(){
                 $location.url('/');
                 $scope.message = "GET failed!";
             }
         );
+    $scope.filter = function(value)
+    {
+        $scope.recipes = [];
+        for(i = 0; i < $scope.allrecipes.length; i++)
+        {
+            if($scope.allrecipes[i] == $scope.dropdown[value])
+            {
+                $scope.recipes.push($scope.allrecipes[i]);
+            }
+        }
+    }
+
     $("#nextto2").click(function(){
         $('#modal1').modal('hide');
         $('#modal2').modal('show');
@@ -66,4 +79,3 @@ function addRow(frm) {
 function removeRow(rnum) {
     jQuery('#rowNum'+rnum).remove();
 }
-
