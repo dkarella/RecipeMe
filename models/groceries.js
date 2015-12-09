@@ -6,9 +6,7 @@ var mongoose = require('mongoose'),
 // Create the schema
 var GroceriesSchema = new Schema({
     name: String,
-    recipes: [{
-        recipe: mongoose.Schema.Types.ObjectId
-    }]
+    recipes: [ String ]
 });
 
 var GroceriesModel = mongoose.model('Groceries', GroceriesSchema);

@@ -16,7 +16,7 @@ router.get('/', function(req, res){
             if (docs){
                 var recipeIds = [];
                 for(var i = 0; i < docs.recipes.length; i++){
-                    recipeIds.push(docs.recipes[i].recipe);
+                    recipeIds.push(docs.recipes[i]);
                 }
                 console.log(recipeIds);
                 Recipes.find({_id:{$in:recipeIds}}, function(err, docs){
@@ -41,12 +41,12 @@ router.post('/add', function(req, res){
     console.log(req.body.recipe);
 
     // get the recipe id
-    var recipeId = Groceries(req.body.recipe);
+    var recipeId = req.body.recipe;
 
-    Groceries.update({name:"default"}, { $push: {"recipes": {recipe: recipeId}} }, {upsert: true}, function(err, numAffected){
+    Groceries.update({name:"default"}, { $push: {"recipes": recipeId }}, {upsert: true}, function(err, numAffected){
         if(err) res.sendStatus(400);
         else{
-            console.log("updated: " + numAffected);
+            console.log("added to grocery list: " + req.body.recipe);
             res.sendStatus(200);
         }
     });

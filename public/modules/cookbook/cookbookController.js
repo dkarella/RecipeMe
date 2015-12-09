@@ -75,7 +75,7 @@ angular.module('app').controller('cookbookController', ['$scope', '$http', '$loc
 
 var rowNum = 0;
 function addRow(frm) {
-    rowNum ++;
+    rowNum++;
     var row = '<p id="rowNum'+rowNum+'">' +
         'Quantity: <input type="text" name="qty[]" size="5" value="'+frm.add_qty.value+'"> ' +
         'Unit: <input type="text" name="add_units" size="5" /> ' +

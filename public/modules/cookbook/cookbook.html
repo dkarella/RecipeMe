@@ -239,7 +239,7 @@
     <div class="row">
     <div class="container">
         <div ng-repeat="recipe in recipes | filter:query" class="col-md-4 recipes">
-            <a href="#/recipe/{{recipe.name}}">
+            <a href="#/recipe/{{recipe._id}}">
                 <img src="{{recipe.picture}}">
                 <h2>{{recipe.name}}</h2>
             </a>
