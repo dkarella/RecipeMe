@@ -17,18 +17,20 @@
 </div><!--./container .recipeheader-->
 
 <div class="container recipeadd">
-    <div class="row">
+    <hr id="dividerhr1"/>
+      <div class="row">
         <div class="col-md-6 addbutton" id="addcookbook">
-            <button ng-click="addToCookbook()">
+            <button ng-if="!recipe.saved" ng-click="addToCookbook()" type="button" class="btn btn-warning" >
                 <h3>Add to cookbook</h3>
             </button>
         </div>
         <div class="col-md-6 addbutton" id="addgroceries">
-            <button ng-click="addToGroceryList()">
+            <button type="button" class="btn btn-warning" ng-click="addToGroceryList()">
                 <h3>Add to groceries</h3>
             </button>
         </div>
     </div><!--.row-->
+    <hr id="dividerhr2"/>
 </div><!--./container .recipeadd-->
 
 <div class="container instructions">

@@ -46,22 +46,13 @@ body {
 
 .addbutton {
     float: left;
-    background-color: #c8f089;
     display: block;
     text-align: center;
-    border: 1px solid #8b8b8b;
+    padding: 10px 10px;
 }
 
 .addbutton a {
     color: #2c2c2c;
-}
-
-.addbutton a:hover {
-    text-decoration: none;
-}
-
-.addbutton:hover {
-    background-color: #d0f7a9;
 }
 
 #addcookbook {
@@ -92,4 +83,14 @@ body {
 
 .steps li {
     line-height: 2em;
+}
+
+/*Hr*/
+#dividerhr1 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+#dividerhr2 {
+   margin-top: 5px;
 }

@@ -38,6 +38,17 @@ input[type="radio"] {
     margin-left: 10px;
 }
 
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ffdab6, #ff8900, #ffdab6);
+}
+
+/*What are the ingredients*/
+.add_qty {
+    with: 10px;
+}
 
 /*The specifics*/
 
@@ -98,16 +109,22 @@ input[type="radio"] {
 }
 
 #itemRows {
-    margin-left: 50px;
+    margin-left: 75px;
 }
 
-#itemRowsSteps {
-    margin-left: 80px;
+#itemRowssteps {
+    margin-left: 90px;
 }
+
 
 .stepsize input[type=text] {
     width: 600px;
     height: 50px;
+}
+
+#removestepbutton {
+    margin-top: -28px;
+    margin-left: 5px;
 }
 
 #labeladdtoexisting {
@@ -118,13 +135,13 @@ input[type="radio"] {
     margin-right: 16px;
 }
 
+#almostdone {
+    margin-top: -15px;
+}
+
 /*Create new cookbook modal*/
 
 #createcookbookmodal hr { 
-    border: 0;
-    height: 1px;
-    background: #333;
-    background-image: linear-gradient(to right, #ffdab6, #ff8900, #ffdab6);
     margin-bottom: 50px;
 }
 
